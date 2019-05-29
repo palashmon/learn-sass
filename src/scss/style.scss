@@ -1,0 +1,34 @@
+$red: #ff0000;
+$white: #ffffff;
+$gray: #808080;
+$pink: #ffcbdb;
+$brown: #964b00;
+$orange: #ff7f00;
+$yellow: #ffff00;
+$green: #00ff00;
+$cyan: #00ffff;
+$blue: #0000ff;
+$violet: #7f00ff;
+$black: #000000;
+$duke-blue: #001a57;
+$blue-gray: #6699cc;
+$main-green: #00647d;
+$alice-blue: #f0f8ff;
+$ash-gray: #b2beb5;
+$primary-bg-color: #f2f3f5;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background: $primary-bg-color;
+  color: $black;
+}
+
+#wrapper {
+  background: $white;
+  margin: 0 auto;
+  margin-top: 56px;
+  max-width: 960px;
+  padding: 20px;
+}
