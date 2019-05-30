@@ -25,7 +25,7 @@ body {
   * Nesting
   * Ref: https://sass-lang.com/documentation/style-rules#nesting
   */
-  #wrapper {
+  #bg {
     clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
     background-color: map-get($colors, primary);
     color: map-get($colors, accent);
