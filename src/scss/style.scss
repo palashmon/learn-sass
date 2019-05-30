@@ -1,3 +1,6 @@
+// Importing Montserrat from google font api
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 /**
 * Map Functions
 * map-get($map, $key)
@@ -9,14 +12,26 @@ $colors: (
   accent: #fff6bb
 );
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  padding: 30px 50px;
+body,
+html {
+  height: 100%;
+}
 
-  // Using map-get($map, $key) here
-  // to return the value in $colors map associated with $key.
-  background-color: map-get($colors, primary);
-  color: map-get($colors, accent);
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+
+  /**
+  * Nesting
+  * Ref: https://sass-lang.com/documentation/style-rules#nesting
+  */
+  #wrapper {
+    clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+    background-color: map-get($colors, primary);
+    color: map-get($colors, accent);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 }
