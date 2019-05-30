@@ -9,8 +9,14 @@
 
 $colors: (
   primary: #005dff,
-  accent: #fff6bb
+  accent: #fff6bb,
+  whitehex: #ffffff,
+  primary-light: lighten(#005dff, 40%),
+  primary-dark: darken(#005dff, 40%)
 );
+
+$padding: 15px;
+$borders: 15px;
 
 /**
 * Sass Functions
@@ -41,5 +47,86 @@ body {
     height: 100%;
     position: absolute;
     z-index: -1;
+  }
+
+  // Page Header Link
+  //--------------------------------------------
+  header a {
+    color: color(whitehex);
+    text-decoration: none;
+    padding: $padding;
+    display: block;
+  }
+}
+
+//--------------------------------------------
+// Our Main Section
+//--------------------------------------------
+main {
+  // Section Card
+  //--------------------------------------------
+  section#card {
+    background-color: color(whitehex);
+    padding: 20px;
+    margin: 1em auto;
+    border-radius: $borders;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 80%;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        span {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background-color: color(primary-light);
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        strong {
+          display: inline-block;
+          margin-left: max(40px);
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  // Section Primary
+  //--------------------------------------------
+  section#primary {
+    color: color(whitehex);
+    padding: $padding;
+    text-align: center;
+
+    h1 {
+      font-size: 3em;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.4em;
+    }
+
+    a {
+      color: color(primary-dark);
+      border-radius: $borders;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: color(accent);
+      display: block;
+      text-align: center;
+      margin: 50px auto 0 auto;
+      padding: $padding;
+    }
   }
 }
