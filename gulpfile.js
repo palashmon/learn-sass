@@ -2,20 +2,26 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const stripCssComments = require('gulp-strip-css-comments');
 
 // Compile Sass & Inject Into Browser
 gulp.task('sass', function() {
-  return gulp
-    .src(['src/scss/*.scss'])
-    .pipe(sass())
-    .pipe(
-      autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-      })
-    )
-    .pipe(gulp.dest('src/css'))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src(['src/scss/*.scss'])
+
+      // For learning purpose we are using expanded
+      .pipe(sass({ outputStyle: 'expanded' }))
+      .pipe(
+        autoprefixer({
+          browsers: ['last 2 versions'],
+          cascade: false
+        })
+      )
+      .pipe(stripCssComments())
+      .pipe(gulp.dest('src/css'))
+      .pipe(browserSync.stream())
+  );
 });
 
 // Watch Sass & Serve
