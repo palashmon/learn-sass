@@ -26,6 +26,18 @@ $borders: 15px;
   @return map-get($colors, $color-name);
 }
 
+$desktop: 840px;
+
+/**
+* Sass Mixins
+* Ref: https://sass-lang.com/documentation/at-rules/mixin
+*/
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
 body,
 html {
   height: 100%;
@@ -47,6 +59,12 @@ body {
     height: 100%;
     position: absolute;
     z-index: -1;
+
+    // Mixins are included into the current
+    // context using the @include at-rule
+    @include desktop {
+      clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+    }
   }
 
   // Page Header Link
@@ -63,6 +81,13 @@ body {
 // Our Main Section
 //--------------------------------------------
 main {
+  // Using css grid
+  @include desktop {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'primary card';
+  }
+
   // Section Card
   //--------------------------------------------
   section#card {
@@ -72,6 +97,13 @@ main {
     border-radius: $borders;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 80%;
+
+    @include desktop {
+      grid-area: card;
+      height: fit-content;
+      align-self: center;
+      margin: 1em;
+    }
 
     ul {
       list-style-type: none;
@@ -106,10 +138,22 @@ main {
     padding: $padding;
     text-align: center;
 
+    @include desktop {
+      grid-area: primary;
+      text-align: left;
+      margin: 4em 0 0 4em;
+    }
+
     h1 {
       font-size: 3em;
       margin-top: 10px;
       text-transform: uppercase;
+
+      @include desktop {
+        width: 30%;
+        font-size: 4em;
+        line-height: 0.9em;
+      }
     }
 
     p {
@@ -127,6 +171,11 @@ main {
       text-align: center;
       margin: 50px auto 0 auto;
       padding: $padding;
+
+      @include desktop {
+        display: inline-block;
+        padding: $padding $padding * 4;
+      }
     }
   }
 }
