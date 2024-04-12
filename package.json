@@ -15,10 +15,10 @@
   "author": "Palash Mondal",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-sass": "^4.0.2",
+    "browser-sync": "^3.0.0",
+    "gulp": "^5",
+    "gulp-autoprefixer": "^9",
+    "gulp-sass": "^5",
     "gulp-strip-css-comments": "^2.0.0"
   }
 }
