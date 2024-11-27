@@ -18,7 +18,7 @@
     "browser-sync": "^3.0.0",
     "gulp": "^5",
     "gulp-autoprefixer": "^9",
-    "gulp-sass": "^5",
+    "gulp-sass": "^6",
     "gulp-strip-css-comments": "^3.0.0"
   }
 }
